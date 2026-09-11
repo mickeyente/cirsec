@@ -855,34 +855,112 @@
         font-size: 24px;
       }
     }
-  /* ---------- CARD ANIMATION ---------- */
-  .card-anim {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    margin-bottom: 24px;
-  }
-  .card-anim .ring {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    border: 1.5px solid var(--cyan);
-    animation: pulse-ring 2.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-  .card-anim .ring-1 { width: 100%; height: 100%; animation-delay: 0s; }
-  .card-anim .ring-2 { width: 60%; height: 60%; animation-delay: 0.5s; }
-  .card-anim .ring-3 { width: 20%; height: 20%; background: var(--cyan); animation: pulse-dot 2.5s infinite; border: none; }
-  @keyframes pulse-ring {
-    0% { transform: translate(-50%, -50%) scale(0.4); opacity: 0; }
-    50% { opacity: 0.6; }
-    100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0; }
-  }
-  @keyframes pulse-dot {
-    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.7; }
-    50% { transform: translate(-50%, -50%) scale(1.4); opacity: 1; box-shadow: 0 0 12px var(--cyan); }
-    100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.7; }
-  }
+
+    /* ---------- CARD ANIMATION ---------- */
+    .card-anim {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      margin-bottom: 24px;
+    }
+
+    .card-anim .ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1.5px solid var(--cyan);
+      animation: pulse-ring 2.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    .card-anim .ring-1 {
+      width: 100%;
+      height: 100%;
+      animation-delay: 0s;
+    }
+
+    .card-anim .ring-2 {
+      width: 60%;
+      height: 60%;
+      animation-delay: 0.5s;
+    }
+
+    .card-anim .ring-3 {
+      width: 20%;
+      height: 20%;
+      background: var(--cyan);
+      animation: pulse-dot 2.5s infinite;
+      border: none;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        transform: translate(-50%, -50%) scale(0.4);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 0.6;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0;
+      }
+    }
+
+    @keyframes pulse-dot {
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 1;
+        box-shadow: 0 0 12px var(--cyan);
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.7;
+      }
+    }
+
+    /* ---------- SPONSOR MODAL ---------- */
+    .sponsor-form .form-group {
+      margin-bottom: 20px;
+    }
+
+    .sponsor-form label {
+      display: block;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+    }
+
+    .sponsor-form input {
+      width: 100%;
+      padding: 12px 16px;
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      font-size: 15px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+
+    .sponsor-form input:focus {
+      outline: none;
+      border-color: var(--cyan);
+    }
+
+    .sponsor-form input::placeholder {
+      color: var(--ink-faint);
+    }
   </style>
 </head>
 
@@ -899,7 +977,6 @@
         <a href="#what-we-do">What we do</a>
         <a href="#initiative">October Initiative</a>
         <a href="#program-sponsorship">Event</a>
-        <a href="#involved">Get involved</a>
         <a href="#partners">Partners</a>
       </nav>
       <a href="#involved" class="nav-cta">Get involved</a>
@@ -1026,24 +1103,32 @@
     <div class="wrap">
       <div class="prog-sponsor-grid">
         <div class="prog-card">
-          <div class="card-anim"><div class="ring ring-1"></div><div class="ring ring-2"></div><div class="ring ring-3"></div></div>
+          <div class="card-anim">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+          </div>
           <h3>CyberSafety 2026 Programme</h3>
           <p>A practical cybersecurity awareness programme designed to help organisations and their employees recognise
             common cyber risks, make safer digital decisions, and strengthen everyday security practices.</p>
           <div class="prog-actions">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTgYku1sPGDoEX0W-pLKe5tkkAKsTtWi8Hx4ePBe5IYMh_xA/viewform"
               target="_blank" class="btn btn-primary">Register for Program</a>
-            <button onclick="openModal()" class="btn btn-ghost">Read More</button>
+            <a href="https://drive.google.com/file/d/1AYCQI1pWfJqZXbhEfKAT0Or6RXa4B-0t/view?usp=drive_link"
+              target="_blank" class="btn btn-ghost">Read More</a>
           </div>
         </div>
         <div class="prog-card">
-          <div class="card-anim"><div class="ring ring-1"></div><div class="ring ring-2"></div><div class="ring ring-3"></div></div>
+          <div class="card-anim">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+          </div>
           <h3>Sponsorship</h3>
           <p>Supporting CyberSafety 2026 gives your organisation the opportunity to contribute to a safer digital
             environment while strengthening its visibility, reputation and engagement with relevant audiences.</p>
           <div class="prog-actions">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTgYku1sPGDoEX0W-pLKe5tkkAKsTtWi8Hx4ePBe5IYMh_xA/viewform"
-              target="_blank" class="btn btn-primary">I want to sponsor</a>
+            <button onclick="openSponsorModal()" class="btn btn-primary">Become a sponsor</button>
             <a href="mailto:cirsec1@gmail.com" class="btn btn-ghost">Contact Us</a>
           </div>
         </div>
@@ -1051,7 +1136,7 @@
     </div>
   </section>
 
-  <section id="involved">
+  <!-- <section id="involved">
     <div class="wrap">
       <div class="section-head">
         <span class="label">Get involved</span>
@@ -1084,7 +1169,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="partners" id="partners">
     <div class="wrap">
@@ -1133,121 +1218,108 @@
             <a href="https://x.com/Cirsec_" target="_blank" rel="noopener">X</a>
           </div>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 Cirsec. All rights reserved.</span>
-        <span>Circle Security · Cybersecurity &amp; Technology</span>
-      </div>
-    </div>
-  </footer>
 
-  <!-- Event Modal -->
-  <div id="eventModal" class="modal-overlay">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
-      <div class="modal-body">
-        <h2>CyberSafety 2026 Campaign Overview</h2>
-
-        <h3>What is the Cirsec Cybersecurity Awareness Initiative?</h3>
-        <p>The Cirsec Cybersecurity Awareness Initiative 2026 is a month-long cybersecurity education and public
-          awareness campaign taking place throughout October 2026 in Lagos, Nigeria.</p>
-        <p>The initiative is designed to make cybersecurity practical, understandable and relevant to organisations,
-          employees, business owners, communities and digital users. The campaign combines physical organisational
-          outreach with digital education, media engagement and interactive activities.</p>
-
-        <h3>Our Approach</h3>
-        <p>Rather than treating cybersecurity as an issue only for technical teams, the initiative focuses on the people
-          and everyday behaviours that contribute to organisational security. Our goal is to help people understand
-          cybersecurity before an incident turns into a financial, operational or reputational problem.</p>
-
-        <h3>Why It Matters</h3>
-        <p>Modern organisations depend heavily on email, cloud platforms, mobile devices, online payments, websites,
-          software and digital communication. As this dependence increases, cybersecurity risks can affect more than
-          technology. They can affect:</p>
-        <ul>
-          <li>Business operations</li>
-          <li>Customer trust</li>
-          <li>Company information</li>
-          <li>Financial resources</li>
-          <li>Reputation</li>
-          <li>Business continuity</li>
-          <li>Employee productivity</li>
-          <li>Future growth</li>
-        </ul>
-
-        <h3>Why Your Organisation Should Participate</h3>
-        <p>A cybersecurity incident does not always begin with a sophisticated technical attack. It can begin with a
-          suspicious email, a fraudulent message, a compromised account, an unsafe password, a fake link or an employee
-          unknowingly making the wrong decision. That is why cybersecurity awareness should extend beyond the IT
-          department.</p>
-        <ul>
-          <li><strong>Improve employee awareness:</strong> Help employees recognise common cyber threats and suspicious
-            activity.</li>
-          <li><strong>Reduce preventable mistakes:</strong> Build awareness around phishing, social engineering, scams,
-            account security and unsafe digital behaviour.</li>
-          <li><strong>Strengthen security culture:</strong> Encourage employees to take cybersecurity seriously as part
-            of their everyday responsibilities.</li>
-          <li><strong>Support business continuity:</strong> Help employees and management understand how cybersecurity
-            incidents can disrupt business operations.</li>
-          <li><strong>Protect trust:</strong> Increase awareness of risks that can affect customer information, company
-            reputation and business relationships.</li>
-          <li><strong>Encourage better reporting:</strong> Help employees understand when suspicious activity should be
-            reported and what actions to take.</li>
-        </ul>
-
-        <h3>Core Training Areas</h3>
-        <ol>
-          <li><strong>Cybersecurity Fundamentals:</strong> Common threats, impacts, everyday risks, and employee
-            mistakes.</li>
-          <li><strong>Phishing & Social Engineering:</strong> Recognising suspicious emails, fake links, and social
-            engineering techniques.</li>
-          <li><strong>Account & Access Security:</strong> Password security, multi-factor authentication, and safe
-            access practices.</li>
-          <li><strong>Scams & Digital Fraud:</strong> Online scams, fraudulent communications, and suspicious payment
-            activity.</li>
-          <li><strong>Incident Awareness & Reporting:</strong> Recognising suspicious activity, what to do, and when to
-            report.</li>
-        </ol>
-
-        <h3>How The Training Works</h3>
-        <p>The organisation engagement is designed as an interactive learning session, rather than a conventional
-          lecture.</p>
-        <ul>
-          <li><strong>Awareness Session:</strong> Introduction to key concepts and practical behaviors.</li>
-          <li><strong>Practical Demonstrations:</strong> Examples of common risks and warning signs.</li>
-          <li><strong>Scenario-Based Learning:</strong> Working through realistic situations.</li>
-          <li><strong>Interactive Discussion:</strong> Q&A tailored to the participants' work.</li>
-          <li><strong>Cybersecurity Quiz:</strong> Testing understanding through interactive questions.</li>
-          <li><strong>Key Takeaways:</strong> Practical recommendations employees can apply immediately.</li>
-        </ul>
-
-        <p><strong>Interested in participating?</strong> Register your organisation using the button on the main page to
-          secure a free awareness session for your team!</p>
+        <div class="modal-body">
+          <h2 style="font-size: 26px; margin-bottom: 8px; font-weight: 600;">Event Details</h2>
+          <p style="margin-bottom: 24px; color: var(--text-color-secondary);">Join us for the 2026 CyberSafety 2026
+            Cybersecurity Awareness Initiative in Lagos, Nigeria. This month-long event aims to empower businesses,
+            employees, students, and communities with practical, jargon-free cybersecurity awareness.</p>
+          <div style="margin-bottom: 20px;">
+            <p><strong>Date:</strong> October 2026</p>
+            <p><strong>Location:</strong> Lagos, Nigeria</p>
+            <p><strong>Contact:</strong> <a href="mailto:cirsec1@gmail.com">cirsec1@gmail.com</a></p>
+          </div>
+          <p>Join our interactive workshops, media events, and engaging activities to learn how to secure your digital
+            presence and build business resilience.</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script>
-    function openModal() {
-      var modal = document.getElementById('eventModal');
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+    <!-- Sponsor Modal -->
+    <div id="sponsorModal" class="modal-overlay">
+      <div class="modal-content" style="max-width: 600px;">
+        <button class="modal-close" onclick="closeSponsorModal()">&times;</button>
+        <div class="modal-body">
+          <h2 style="font-size: 26px; margin-bottom: 8px; font-family: 'Space Grotesk', sans-serif; color: var(--ink);">
+            Sponsor this year's CyberSafety 2026</h2>
+          <p style="margin-bottom: 32px; font-size: 14.5px; color: var(--ink-soft);">Fill out the form below and our
+            team
+            will reach out to you in less than 24 hours.</p>
 
-    function closeModal() {
-      var modal = document.getElementById('eventModal');
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
+          <form class="sponsor-form" onsubmit="return false;">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="Enter full name" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="email@example.com" required>
+            </div>
+            <div class="form-group">
+              <label>Organisation</label>
+              <input type="text" placeholder="What's your organisation" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+234 803 123 4567" required>
+            </div>
+            <div class="form-group">
+              <label>Company's website</label>
+              <input type="url" placeholder="https://example.com">
+            </div>
+            <div class="form-group">
+              <label>Company's LinkedIn</label>
+              <input type="url" placeholder="https://linkedin.com/company/example">
+            </div>
+            <div class="form-group">
+              <label>Company's X (Twitter)</label>
+              <input type="url" placeholder="https://twitter.com/username">
+            </div>
+            <button type="submit" class="btn btn-primary"
+              style="margin-top: 16px; width: auto; padding: 14px 36px; border-radius: 24px; font-weight: 600;">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
-    // Close modal when clicking outside of the modal content
-    window.addEventListener('click', function (event) {
-      var modal = document.getElementById('eventModal');
-      if (event.target === modal) {
-        closeModal();
+    <script>
+      function openModal() {
+        var modal = document.getElementById('eventModal');
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
       }
-    });
-  </script>
+
+      function closeModal() {
+        var modal = document.getElementById('eventModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function openSponsorModal() {
+        var modal = document.getElementById('sponsorModal');
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSponsorModal() {
+        var modal = document.getElementById('sponsorModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Close modal when clicking outside of the modal content
+      window.addEventListener('click', function (event) {
+        var eModal = document.getElementById('eventModal');
+        var sModal = document.getElementById('sponsorModal');
+
+        if (event.target === eModal) {
+          closeModal();
+        }
+        if (event.target === sModal) {
+          closeSponsorModal();
+        }
+      });
+    </script>
 </body>
 
 </html>
